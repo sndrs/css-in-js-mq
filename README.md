@@ -20,6 +20,8 @@ const style = {
 }
 ```
 
+## Options
+
 Breakpoint methods can also take 2 options:
 - `media` Array of [media types](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_types) (no default - i.e. all)
 - `and` Array of [media features](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features) (no default)
