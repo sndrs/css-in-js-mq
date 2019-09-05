@@ -17,14 +17,6 @@ const style = {
 	[from.medium.until.large()]: {
 		color: 'green',
 	},
-
-	[until.xSmall({ and: ['(prefers-reduced-motion: reduce)'] })]: {
-		color: 'blue',
-	},
-
-	[until.xSmall({ media: ['print'] })]: {
-		color: 'blue',
-	},
 }
 ```
 
