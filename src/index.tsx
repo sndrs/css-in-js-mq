@@ -25,6 +25,14 @@ const style = css({
 		[from.medium.until.large()]: {
 			content: "'from.medium.until.large()'",
 		},
+
+		[until.xSmall({ and: ['(prefers-reduced-motion: reduce)'] })]: {
+			color: 'blue',
+		},
+
+		[until.xSmall({ media: ['print'] })]: {
+			color: 'blue',
+		},
 	},
 })
 
