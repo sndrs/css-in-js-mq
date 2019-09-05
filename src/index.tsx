@@ -6,7 +6,7 @@ import { from, until } from './css-in-js-mq'
 const style = css({
 	fontFamily: 'system-ui',
 
-	['::after']: {
+	'::after': {
 		display: 'block',
 		marginTop: '1em',
 		content: "'no mq applies'",
