@@ -15,3 +15,5 @@ const style = {
 	},
 }
 ```
+
+Live example: https://sndrs.github.io/css-in-js-mq
