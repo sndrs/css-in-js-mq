@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"lib": ["es2015"],
+		"strict": true,
+		"declaration": true,
+		"outDir": "dist",
+		"sourceMap": true
+	},
+	"include": ["packages/csspackages/types.d.tssrc/**/*", "types.d.ts"],
+	"exclude": ["node_modules", "**/*.spec.ts"]
+}
