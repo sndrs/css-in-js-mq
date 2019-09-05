@@ -1,10 +1,14 @@
 # Proof of concept for css-in-js-mq:
 
 ```js
-import { from } from 'css-in-js-mq'
+import { from, until } from 'css-in-js-mq'
 
 const style = {
 	color: 'red',
+
+	[until.xSmall()]: {
+		color: 'blue',
+	},
 
 	[from.small()]: {
 		color: 'blue',
