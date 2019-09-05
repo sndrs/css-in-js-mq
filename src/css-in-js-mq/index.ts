@@ -1,6 +1,7 @@
 import { fromQuery, fromUntilQuery, untilQuery } from './media-queries'
+import { From, Until } from './types'
 
-const breakpoints = {
+export const breakpoints = {
 	xxSmall: 320,
 	xSmall: 375,
 	small: 480,
@@ -8,19 +9,6 @@ const breakpoints = {
 	large: 980,
 	xLarge: 1140,
 	xxLarge: 1300,
-}
-
-type Breakpoints = keyof typeof breakpoints
-
-type Until = {
-	[key in Breakpoints]: { (): string }
-}
-
-type From = {
-	[key in Breakpoints]: {
-		(): string
-		until: Until
-	}
 }
 
 export const until = Object.entries(breakpoints).reduce(
