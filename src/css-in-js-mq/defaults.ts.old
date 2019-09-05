@@ -1,7 +1,10 @@
 // this isn't in use the moment, but don't want to trash it just yet...
 
+type breakpoint = {
+	[key in Breakpoints]: number
+}
+
 import { fromQuery, fromUntilQuery, untilQuery } from './media-queries'
-import { breakpoint } from './types'
 
 export const breakpoints: breakpoint = {
 	xxSmall: 320,
