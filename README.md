@@ -1,4 +1,4 @@
-Proof of concept for css-in-js-mq:
+# Proof of concept for css-in-js-mq:
 
 ```js
 import { from } from 'css-in-js-mq'
