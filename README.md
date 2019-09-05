@@ -4,19 +4,19 @@
 import { from, until } from 'css-in-js-mq'
 
 const style = {
-	color: 'red',
+    color: 'red',
 
-	[until.xSmall()]: {
-		color: 'blue',
-	},
+    [until.xSmall()]: {
+        color: 'blue',
+    },
 
-	[from.small()]: {
-		color: 'blue',
-	},
+    [from.small()]: {
+        color: 'blue',
+    },
 
-	[from.medium.until.large()]: {
-		color: 'green',
-	},
+    [from.medium.until.large()]: {
+        color: 'green',
+    },
 }
 ```
 
@@ -28,13 +28,13 @@ Breakpoint methods can also take 2 options:
 import { from, until } from 'css-in-js-mq'
 
 const style = {
-	[until.xSmall({ and: ['(prefers-reduced-motion: reduce)'] })]: {
-		color: 'blue',
-	},
+    [until.xSmall({ and: ['(prefers-reduced-motion: reduce)'] })]: {
+        color: 'blue',
+    },
 
-	[until.xSmall({ media: ['print'] })]: {
-		color: 'blue',
-	},
+    [until.xSmall({ media: ['print'] })]: {
+        color: 'blue',
+    },
 }
 ```
 
