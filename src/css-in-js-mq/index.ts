@@ -2,13 +2,16 @@ import { fromQuery, fromUntilQuery, untilQuery } from './media-queries'
 
 type Breakpoints = keyof typeof breakpoints
 
-type Until = {
-	[key in Breakpoints]: { (): string }
+export type CallProps = {
+	and?: [string]
+	media?: [string]
 }
+
+type Until = { [key in Breakpoints]: { (arg0?: CallProps): string } }
 
 type From = {
 	[key in Breakpoints]: {
-		(): string
+		(arg0?: CallProps): string
 		until: Until
 	}
 }
@@ -25,7 +28,7 @@ const breakpoints = {
 
 export const until = Object.entries(breakpoints).reduce(
 	(untils, [untilName, untilWidth], i) => ({
-		[untilName]: () => untilQuery(untilWidth),
+		[untilName]: (opts: CallProps) => untilQuery(untilWidth, opts),
 		...untils,
 	}),
 	{},
@@ -33,13 +36,14 @@ export const until = Object.entries(breakpoints).reduce(
 
 export const from = Object.entries(breakpoints).reduce(
 	(froms, [fromName, fromWidth], i) => {
-		const bp = () => fromQuery(fromWidth)
+		const bp = (opts: CallProps) => fromQuery(fromWidth)
 
 		bp.until = Object.entries(breakpoints)
 			.splice(i + 1)
 			.reduce(
 				(untils, [untilName, untilWidth]) => ({
-					[untilName]: () => fromUntilQuery(fromWidth, untilWidth),
+					[untilName]: (opts: CallProps) =>
+						fromUntilQuery(fromWidth, untilWidth),
 					...untils,
 				}),
 				{},
