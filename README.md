@@ -1,3 +1,5 @@
+_work on this has been moved to https://github.com/src-mq/src-mq_
+
 # Proof of concept for css-in-js-mq:
 
 ```js
